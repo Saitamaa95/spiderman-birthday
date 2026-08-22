@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #090909;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.page {
+    width: 100%;
+    text-align: center;
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+.spider {
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(32px, 6vw, 55px);
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-top: 25px;
+    font-size: 32px;
+}
+
+.message {
+    max-width: 650px;
+    margin: 0 auto 35px;
+    font-size: clamp(17px, 3vw, 22px);
+    line-height: 1.7;
+    color: #eeeeee;
+}
+
+button {
+    border: none;
+    padding: 14px 32px;
+    border-radius: 30px;
+    background: #e00000;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: #ff1a1a;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.gallery img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 2px solid #333;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* PHONE */
+@media (max-width: 600px) {
+
+    .container {
+        padding: 20px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .gallery img {
+        border-radius: 12px;
+    }
+
+    button {
+        width: 80%;
+        max-width: 280px;
+    }
+}
